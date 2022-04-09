@@ -1,5 +1,10 @@
 {
     "projectId": "7p48zf",
     "baseUrl": "http://localhost:3000",
-    "experimentalStudio": true
+    "experimentalStudio": true,
+    "ignoreTestFiles": [
+        "*.js",
+        "*.md"
+    ],
+    "testFiles": "**/*.{feature,features}"
 }
