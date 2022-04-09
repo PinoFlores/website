@@ -1,6 +1,5 @@
 version: 2.1
-orbs:
-  node: circleci/node@4.7.0
+
 jobs:
   build:
     docker:
@@ -22,6 +21,7 @@ jobs:
         paths:
           - node_modules
         key: app-{{ checksum "package.json" }}
+
   deploy-to-aws-s3:
     docker:
       - image: circleci/node:16.13.2
@@ -58,6 +58,7 @@ jobs:
           else
             aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_DEV_BUCKET} --delete
           fi
+
   deploy-to-aws-cloudfront:
     docker:
       - image: circleci/node:16.13.2
@@ -99,14 +100,13 @@ jobs:
 workflows:
   build_and_deploy:
     jobs:
+      - build
       - deploy-to-aws-s3:
           requires:
             - build
           filters:
             branches:
               only:
-                - develop
-                - staging
                 - main
       - deploy-to-aws-cloudfront:
           requires:
@@ -114,6 +114,4 @@ workflows:
           filters:
             branches:
               only:
-                - develop
-                - staging
                 - main
