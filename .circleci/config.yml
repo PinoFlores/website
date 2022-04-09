@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  node: "circleci/node:4.1"
-
 jobs:
   build:
     docker:
@@ -13,10 +10,6 @@ jobs:
       - run:
           name: Show current branch
           command: echo ${CURRENT_BRANCH}
-      - restore_cache:
-        key:
-          - app-{{ checksum "package.json" }}
-          - app-
       - run:
           name: Install dependencies
           command: npm install
