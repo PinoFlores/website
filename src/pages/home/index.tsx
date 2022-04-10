@@ -1,6 +1,7 @@
-import { makeStyles } from "@mui/styles";
-import Container from "@mui/material/Container";
-import { Box, Paper, Typography } from "@mui/material";
+import React from "react";
+
+import { Container, Box, Typography, makeStyles } from "@material-ui/core";
+
 import { Curriculum } from "../../Components";
 import { ICurriculum } from "../../types/Curriculum";
 import { Flexbox } from "../../Components/StyledComponents";
@@ -83,33 +84,29 @@ export const HomePage = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
-      <Box className={classes.container}>
-        <Box className={classes.navbar}></Box>
+    <div className={classes.root}>
+      <div className={classes.container}>
+        <div className={classes.navbar}></div>
         <Container maxWidth="md">
-          <Box>
-            <Typography variant="h6" fontWeight="bolder">
-              Hi, my name is
-            </Typography>
-            <Typography variant="h1" fontWeight="bolder" fontSize="7rem">
-              Jose Aburto
-            </Typography>
-            <Typography variant="subtitle1" fontSize="1.5rem">
+          <div>
+            <Typography variant="h6">Hi, my name is</Typography>
+            <Typography variant="h1">Jose Aburto</Typography>
+            <Typography variant="subtitle1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum est
               voluptatibus cupiditate facere modi eligendi in? Mollitia,
               recusandae neque beatae unde nostrum exercitationem similique ipsa
               quis perspiciatis, consectetur animi facilis.
             </Typography>
-          </Box>
-          <Box sx={{ marginTop: "3rem" }}>
+          </div>
+          <div>
             <Flexbox justify="center">
               <Curriculum metadata={cv} />
             </Flexbox>
-          </Box>
+          </div>
         </Container>
-      </Box>
-      <Box className={classes.backgroundContainer} />
-    </Box>
+      </div>
+      <div className={classes.backgroundContainer} />
+    </div>
   );
 };
 const useStyles = makeStyles({
