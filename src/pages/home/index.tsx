@@ -1,90 +1,92 @@
-import React from "react";
+import * as React from "react";
 
-import { Container, Box, Typography, makeStyles } from "@material-ui/core";
+import { Box, Paper, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import Container from "@mui/material/Container";
 
 import { Curriculum } from "../../Components";
 import { ICurriculum } from "../../types/Curriculum";
 import { Flexbox } from "../../Components/StyledComponents";
 
-const cv: ICurriculum = {
-  img: "https://media-exp1.licdn.com/dms/image/C4D03AQFEvfVLdcIr0A/profile-displayphoto-shrink_800_800/0/1553727303871?e=1655337600&v=beta&t=W0-HvUApchHf00PqgMzlTzXY5LdcWzvabXM6D8nBdFQ",
-  firstName: "Jose",
-  lastName: "Aburto Flores",
-  professionTitle: "Full Stack Web Engineer",
-  presentationText:
-    "IT lover • Easy Learning • Critical Analisys • Great Idea • Good comunication • Algoritms design and analisis • Full Understand of Data Structure • Good Eye for UI • Mobile Knowladge • Database design",
-  contacts: [
-    { type: "phone", label: "+34 6665544" },
-    { type: "social", label: "@joseaburto", link: "" },
-    { type: "email", label: "joseaburto@gmail.com" },
-  ],
-  experiences: [
-    {
-      job: "Frontend Developer",
-      title: "TITLE",
-      date: new Date(),
-      company: {
-        name: "Compact Company",
-        location: "Managua, Nic",
-      },
-      description: "",
-      resposabilities: [
-        "Design, layout and programming different websites for different client from US.",
-      ],
-    },
-    {
-      job: "Junior Full Stack",
-      title: "TITLE",
-      date: new Date(),
-      company: {
-        name: "CCSS",
-        location: "Heredia, Costa Rica",
-      },
-      description: "",
-      resposabilities: [
-        "API design and implementation in Java",
-        "Microservices with Spring framework",
-        "System maintance and documentation",
-        "Web Development with Reactjs",
-      ],
-    },
-    {
-      job: "Full Stack Engineer",
-      title: "TITLE",
-      date: "current",
-      company: {
-        name: "Delinternet",
-        location: "Tarragona, Spain",
-      },
-      description: "",
-      resposabilities: [
-        "Product Owner",
-        "Junior UX/UI Designer",
-        "Frontend Architecture",
-        "Backend Architecture",
-        "Databases Design - SQL / NO-SQL",
-      ],
-    },
-    {
-      job: "React Native Developer",
-      title: "",
-      date: "freelance",
-      company: {
-        name: "Delinternet",
-        location: "Tarragona, Spain",
-      },
-      description:
-        "Collaborate in free days with freelance team in develop android apps.",
-      resposabilities: ["Component Design", "Testing"],
-    },
-  ],
-};
-
 export const HomePage = () => {
   const classes = useStyles();
 
+  const cv: ICurriculum = {
+    img: "https://media-exp1.licdn.com/dms/image/C4D03AQFEvfVLdcIr0A/profile-displayphoto-shrink_800_800/0/1553727303871?e=1655337600&v=beta&t=W0-HvUApchHf00PqgMzlTzXY5LdcWzvabXM6D8nBdFQ",
+    firstName: "Jose",
+    lastName: "Aburto Flores",
+    professionTitle: "Full Stack Web Engineer",
+    presentationText:
+      "IT lover • Easy Learning • Critical Analisys • Great Idea • Good comunication • Algoritms design and analisis • Full Understand of Data Structure • Good Eye for UI • Mobile Knowladge • Database design",
+    contacts: [
+      { type: "phone", label: "+34 6665544" },
+      { type: "social", label: "@joseaburto", link: "" },
+      { type: "email", label: "joseaburto@gmail.com" },
+    ],
+    experiences: [
+      {
+        job: "Frontend Developer",
+        title: "TITLE",
+        date: new Date(),
+        company: {
+          name: "Compact Company",
+          location: "Managua, Nic",
+        },
+        description: "",
+        resposabilities: [
+          "Design, layout and programming different websites for different client from US.",
+        ],
+      },
+      {
+        job: "Junior Full Stack",
+        title: "TITLE",
+        date: new Date(),
+        company: {
+          name: "CCSS",
+          location: "Heredia, Costa Rica",
+        },
+        description: "",
+        resposabilities: [
+          "API design and implementation in Java",
+          "Microservices with Spring framework",
+          "System maintance and documentation",
+          "Web Development with Reactjs",
+        ],
+      },
+      {
+        job: "Full Stack Engineer",
+        title: "TITLE",
+        date: "current",
+        company: {
+          name: "Delinternet",
+          location: "Tarragona, Spain",
+        },
+        description: "",
+        resposabilities: [
+          "Product Owner",
+          "Junior UX/UI Designer",
+          "Frontend Architecture",
+          "Backend Architecture",
+          "Databases Design - SQL / NO-SQL",
+        ],
+      },
+      {
+        job: "React Native Developer",
+        title: "",
+        date: "freelance",
+        company: {
+          name: "Delinternet",
+          location: "Tarragona, Spain",
+        },
+        description:
+          "Collaborate in free days with freelance team in develop android apps.",
+        resposabilities: ["Component Design", "Testing"],
+      },
+    ],
+  };
+
   return (
-    <div className={classes.root}>
+    <Box className={classes.root}>
       <div className={classes.container}>
         <div className={classes.navbar}></div>
         <Container maxWidth="md">
@@ -106,7 +108,7 @@ export const HomePage = () => {
         </Container>
       </div>
       <div className={classes.backgroundContainer} />
-    </div>
+    </Box>
   );
 };
 const useStyles = makeStyles({

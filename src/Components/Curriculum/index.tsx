@@ -4,14 +4,14 @@ import moment from "moment";
 import styled from "@emotion/styled";
 import { Flexbox } from "./../StyledComponents/index";
 import { ICurriculum, IExperience } from "../../types/Curriculum";
-import PhoneForwardedIcon from "@material-ui/icons/PhoneForwarded";
-import EmailIcon from "@material-ui/icons/Email";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import { useTheme } from "@material-ui/core";
+import PhoneForwardedIcon from "@mui/icons-material/PhoneForwarded";
+import MailIcon from "@mui/icons-material/Mail";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useTheme } from "@mui/material";
 
 const icons = {
   phone: PhoneForwardedIcon,
-  email: EmailIcon,
+  email: MailIcon,
   social: LinkedInIcon,
 };
 
