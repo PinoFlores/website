@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Container from "@mui/material/Container";
 
