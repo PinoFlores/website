@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { Box, Button, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Curriculum, Navbar, Container } from "../../Components";
@@ -5,7 +7,8 @@ import { ICurriculum } from "../../types/Curriculum";
 import { Flexbox } from "../../Components/StyledComponents";
 import React from "react";
 import { AsyncImg } from "../../Components/AsyncImg";
-
+import { css, keyframes } from "@emotion/react";
+import { InfiniteHorizontalCarousel } from "../../Components/InfiniteHorizontalCarousel";
 interface CommonContainerProps {
   children?: React.ReactNode;
   className?: string;
@@ -14,6 +17,15 @@ interface CommonContainerProps {
 const CommonContainer = (props: CommonContainerProps) => {
   return <Container maxWidth="70%" {...props} />;
 };
+
+const myEffectExit = keyframes`
+  0% {
+		left: 0;
+	}
+	100% {
+		left: -900%;
+	}
+`;
 
 const imgs = [
   "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg",
@@ -278,13 +290,10 @@ export const HomePage = () => {
             </Typography>
             <br />
             <br />
-            <div className="img-container">
-              {imgs.map((src, i) => {
-                return <AsyncImg src={src} />;
-              })}
-            </div>
           </div>
         </CommonContainer>
+
+        <InfiniteHorizontalCarousel />
       </header>
 
       <br />
@@ -298,21 +307,17 @@ export const HomePage = () => {
     </Box>
   );
 };
-const useStyles = makeStyles({
-  root: {
-    "& .img-container": {
-      "& img": {
-        height: "70px",
-        width: "70px",
-        padding: "0.5rem",
+
+const useStyles = makeStyles((theme) => {
+  return {
+    root: {
+      background: "#fafcfd",
+      "& .headerInnerContainer": {
+        padding: "6rem 0 2rem 0",
+      },
+      "& .header": {
+        height: "100vh",
       },
     },
-    background: "#fafcfd",
-    "& .headerInnerContainer": {
-      padding: "6rem 0 2rem 0",
-    },
-    "& .header": {
-      height: "100vh",
-    },
-  },
+  };
 });
