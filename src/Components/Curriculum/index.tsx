@@ -130,8 +130,8 @@ export const Curriculum = ({ metadata }: CurriculumProps) => {
 
 const CurriculumPaper = styled.div`
   padding: 10px;
-  /* width: 210mm;
-  height: 297mm; */
+  width: 210mm;
+  height: 297mm;
   border-radius: 6px;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);

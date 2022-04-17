@@ -30,6 +30,7 @@ interface FlexboxProps {
 
 export const Flexbox = styled.div<FlexboxProps>`
   display: flex;
+
   flex-wrap: ${(props) => props?.wrap || "wrap"};
   flex-direction: ${(props) => props?.justify || "row"};
   align-items: ${(props) => props?.alignItems || "flex-start"};
