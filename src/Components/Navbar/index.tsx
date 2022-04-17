@@ -1,8 +1,7 @@
 import React from "react";
-import { Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { ContainerProps, Container as MUIContainer } from "../Container";
 import { Flexbox } from "../StyledComponents";
+import { ContainerProps, Container as MUIContainer } from "../Container";
 
 interface NavbarProps {
   height?: number;

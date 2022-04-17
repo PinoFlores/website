@@ -3,5 +3,5 @@ interface AsyncImgProps {
 }
 
 export const AsyncImg = ({ src }: AsyncImgProps) => {
-  return <img src={src} loading="lazy" />;
+  return <img src={src} loading="lazy" alt={src} />;
 };
